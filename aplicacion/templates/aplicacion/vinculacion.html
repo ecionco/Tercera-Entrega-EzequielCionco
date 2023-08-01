@@ -1,0 +1,53 @@
+{% extends 'aplicacion/base.html'%}
+{% load static %}
+
+
+{% block cabecera%}
+       <div class="masthead-heading text-uppercase">Vinculaciones</div>
+{% endblock cabecera%}
+
+{% block contenido %}
+    <section class="page-section" id="services">
+       <div class="container">
+           <div class="text-center">
+             <h2 class="section-heading text-uppercase">Vinculacion</h2>
+             <h3 class="section-subheading text-muted">"Veni, vidi, vici"</h3>
+             </div>
+           <div class="row text-center">
+        </div>
+    </section>
+<table class="table">
+    <thead>
+         <tr>
+            <th>ID</th>
+            <th>Trabajo</th>
+            <th>JobSol</th>
+            <th>Fecha_Vin</th>
+            <th>Estado</th>
+            <th>Salario_Esperado</th> 
+            <th>Comentarios</th> 
+         </tr>
+    </thead>
+    <tbody>     
+    {% for vinculacion in vinculacion %}
+    <tr>
+        <td>{{vinculacion.id}}</td>
+        <td>{{vinculacion.trabajo}}</td>
+        <td>{{vinculacion.job_solicitante}}</td>
+        <td>{{vinculacion.fecha_vinculacion}}</td>
+        <td>{{vinculacion.estado}}</td>
+        <td>{{vinculacion.salario_esperado}}</td>
+        <td>{{vinculacion.comentarios}}</td> 
+    </tr>
+    {% endfor %}
+    </tbody>       
+</table>  
+{% endblock contenido %}
+
+             <td>{{vinculacion.id}}</td>
+             <td>{{vinculacion.trabajo}}</td>
+             <td>{{vinculacion.job_solicitante}}</td>
+             <td>{{vinculacion.fecha_vinculacion}}</td>
+             <td>{{vinculacion.estado}}</td>
+             <td>{{vinculacion.salario_esperado}}</td>
+             <td>{{vinculacion.comentarios}}</td>
