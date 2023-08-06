@@ -1,0 +1,28 @@
+{% extends 'aplicacion/base.html' %}
+{%load  static%}
+
+{% block contenido %}
+
+    Habilidades de los solicitantes {{ habilidades }}
+    <table class="table">
+        <thead>
+             <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Habilidades</th> 
+             </tr>
+        </thead>
+        <tbody>     
+        {% for solicitante in solicitante %}
+        <tr>
+            <td>{{solicitante.id}}</td>
+            <td>{{solicitante.nombre}}</td>
+            <td>{{solicitante.edad}}</td>
+            <td>{{solicitante.habilidades}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>       
+    </table>  
+
+{% endblock contenido %}

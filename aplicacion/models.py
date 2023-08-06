@@ -8,11 +8,17 @@ class Trabajo(models.Model):
     requisitos_excluyentes = models.TextField()
     requisitos_no_excluyentes = models.TextField()
     salario_ofrecido = models.DecimalField(max_digits=10, decimal_places=2)
+    
+    def __str__(self):
+        return f"{self.titulo}, {self.salario_ofrecido}"
 
 class Solicitante(models.Model):
     nombre = models.CharField(max_length=50)
     edad = models.IntegerField()
     habilidades = models.TextField()
+    
+    def __str__(self):
+        return f"{self.nombre}, {self.habilidades}"
 
 class Vinculacion(models.Model):
     trabajo = models.ForeignKey(Trabajo, on_delete=models.CASCADE)
@@ -21,3 +27,6 @@ class Vinculacion(models.Model):
     estado = models.CharField(max_length=50)
     salario_esperado = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
     comentarios = models.TextField(blank=True, null=True)
+    
+    def __str__(self):
+        return f"{self.trabajo}, {self.job_solicitante}"
